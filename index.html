@@ -2,55 +2,84 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Harper Chen | Pixel Adventure</title>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter&display=swap" rel="stylesheet">
+  <title>Harper Chen | Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="retro-theme">
+<body>
 
-<div class="container">
+<!-- Top Navbar -->
+<nav class="navbar">
+  <ul>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#resume">Resume</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-  <!-- Left Menu -->
-  <aside class="left-menu">
-    <button class="menu-button" onclick="showSection('backpack')"><img src="images/backpack.png" class="icon"> Backpack</button>
-    <button class="menu-button" onclick="showSection('warehouse')"><img src="images/warehouse.png" class="icon"> Warehouse</button>
-    <button class="menu-button" onclick="showSection('skilltree')"><img src="images/skilltree.png" class="icon"> Skill Tree</button>
-    <button class="menu-button" onclick="showSection('questlog')"><img src="images/questlog.png" class="icon"> Quest Log</button>
-    <button class="menu-button" onclick="showSection('settings')"><img src="images/settings.png" class="icon"> Settings</button>
-  </aside>
+<!-- Welcome Section -->
+<header class="welcome">
+  <h1>Hello. I'm Harper Chen.</h1>
+  <p>I'm a CS Graduate & Frontend Developer.</p>
+</header>
 
-  <!-- Center Character -->
-  <main class="character-area">
-    <img src="images/your-avatar.png" alt="Harper Avatar" class="avatar">
-    <h1>Harper Chen</h1>
-    <p>Level 1 - New Grad</p>
-    <div class="exp-bar"><div id="exp-fill"></div></div>
-    <button id="theme-toggle">Switch Style</button>
-  </main>
+<!-- Quick Links -->
+<section class="quick-links">
+  <a href="#blog">Blog</a>
+  <a href="https://github.com/your-github" target="_blank">GitHub</a>
+  <a href="https://linkedin.com/in/your-linkedin" target="_blank">LinkedIn</a>
+  <a href="#contact">Contact</a>
+</section>
 
-  <!-- Right Equipment -->
-  <section class="equipment-area" id="content-area">
-    <h2>Equipment - Projects</h2>
-    <div class="equipment-grid">
-      <div class="equipment red" title="Collaborative Web App (Flask, PostgreSQL)">Web App</div>
-      <div class="equipment gold" title="Sentiment Analysis (BERT, NLP)">NLP Project</div>
-      <div class="equipment blue" title="Portfolio Website (HTML/CSS/JS)">Portfolio</div>
-      <div class="equipment blue" title="Weather Dashboard (API, Responsive)">Weather App</div>
+<!-- Projects Section -->
+<section id="projects" class="projects">
+  <h2>Projects</h2>
+  <div class="project-grid">
+    
+    <div class="project-card">
+      <div class="card-header">2024-Project-WebApp.html</div>
+      <div class="card-body">
+        <h3>Collaborative Web App</h3>
+        <p>Built using Flask, PostgreSQL, and JavaScript. RESTful API design with multi-user support.</p>
+        <a href="#">View project</a>
+      </div>
     </div>
-  </section>
 
-</div>
+    <div class="project-card">
+      <div class="card-header">2024-Project-NLP.html</div>
+      <div class="card-body">
+        <h3>Sentiment Analysis</h3>
+        <p>Fine-tuned BERT model for IMDb dataset using PyTorch and TensorFlow.</p>
+        <a href="#">View project</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="card-header">2024-Project-Portfolio.html</div>
+      <div class="card-body">
+        <h3>Portfolio Website</h3>
+        <p>Responsive personal site built with HTML, CSS, JavaScript.</p>
+        <a href="#">View project</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="card-header">2024-Project-WeatherApp.html</div>
+      <div class="card-body">
+        <h3>Weather Dashboard</h3>
+        <p>Fetches live weather data from API. Mobile-friendly and responsive design.</p>
+        <a href="#">View project</a>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 <!-- Footer -->
-<footer class="status-bar">
-  <div>Output Score: 90</div>
-  <div>Survival Score: 4</div>
-  <div>Coins: 15,000</div>
-  <div>Gems: 5,000</div>
+<footer class="footer">
+  <p>© 2025 Harper Chen. All rights reserved.</p>
 </footer>
-
-<audio id="beep-sound" src="beep.mp3" preload="auto"></audio>
-<script src="script.js"></script>
 
 </body>
 </html>
+
