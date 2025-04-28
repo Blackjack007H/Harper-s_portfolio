@@ -2,64 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pixel Portfolio | Harper Chen</title>
+    <title>Harper Chen | Pixel Adventure</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="retro-theme">
 
-<div class="screen">
+<div class="container">
+    
+    <!-- Left Menu -->
+    <aside class="left-menu">
+        <button class="menu-button" onclick="showSection('backpack')">Backpack</button>
+        <button class="menu-button" onclick="showSection('warehouse')">Warehouse</button>
+        <button class="menu-button" onclick="showSection('skill-tree')">Skill Tree</button>
+        <button class="menu-button" onclick="showSection('quest-log')">Quest Log</button>
+        <button class="menu-button" onclick="showSection('settings')">Settings</button>
+    </aside>
 
-    <header>
-        <img src="images/your-avatar.png" alt="Avatar" class="avatar">
+    <!-- Center Character -->
+    <main class="character-area">
+        <img src="images/your-avatar.png" alt="Harper Avatar" class="avatar">
         <h1>Harper Chen</h1>
-        <p class="subtitle">Frontend Adventurer | CS Graduate</p>
+        <p>Level 1 - New Grad</p>
+        <div class="exp-bar">
+            <div id="exp-fill"></div>
+        </div>
         <button id="theme-toggle">Switch Style</button>
-    </header>
+    </main>
 
-    <section class="info-card" id="character-card">
-        <h2>Character Info</h2>
-        <p id="level">Level: 1 (New Grad)</p>
-        <p id="experience">Experience: 0 XP</p>
+    <!-- Right Equipment -->
+    <section class="equipment-area" id="content-area">
+        <h2>Equipment - Projects</h2>
+        <div class="equipment-grid">
+            <div class="equipment red" title="Collaborative Web App (Flask, PostgreSQL)">Web App</div>
+            <div class="equipment gold" title="Sentiment Analysis (BERT, NLP)">NLP Project</div>
+            <div class="equipment blue" title="Portfolio Website (HTML/CSS/JS)">Portfolio</div>
+            <div class="equipment blue" title="Weather Dashboard (API, Responsive)">Weather App</div>
+        </div>
     </section>
-
-    <section class="info-card" id="weapon-card" onclick="toggleWeapons()">
-        <h2>Projects (Click to Expand/Collapse)</h2>
-        <ul id="weapon-list" style="display:none;">
-            <li>Collaborative Web App (Flask, JavaScript, PostgreSQL)</li>
-            <li>Sentiment Analysis with BERT (PyTorch, TensorFlow)</li>
-        </ul>
-    </section>
-
-    <section class="info-card" id="skills-card">
-        <h2>Skills</h2>
-        <ul>
-            <li class="skill-item">Python, C++, SQL</li>
-            <li class="skill-item">Flask, REST APIs, MySQL, PostgreSQL</li>
-            <li class="skill-item">TensorFlow, PyTorch, Pandas, Scikit-learn</li>
-            <li class="skill-item">AWS, Hugging Face Model Hub</li>
-            <li class="skill-item">Accounting, Financial Reporting</li>
-        </ul>
-    </section>
-
-    <section class="info-card">
-        <h2>Quest Log</h2>
-        <ul>
-            <li>Master React and Next.js</li>
-            <li>Contribute to Open Source Projects</li>
-            <li>Land a Frontend Developer Role</li>
-        </ul>
-    </section>
-
-    <div class="buttons">
-        <button onclick="startAdventure()">Start Adventure</button>
-        <button onclick="contactMe()">Send Message</button>
-    </div>
 
 </div>
 
-<audio id="beep-sound" src="beep.mp3" preload="auto"></audio>
+<!-- Footer Status Bar -->
+<footer class="status-bar">
+    <div>Output Score: <span id="output-score">90</span></div>
+    <div>Survival Score: <span id="survival-score">4</span></div>
+    <div>Coins: 15,000</div>
+    <div>Gems: 5,000</div>
+</footer>
 
+<audio id="beep-sound" src="beep.mp3" preload="auto"></audio>
 <script src="script.js"></script>
 </body>
 </html>
