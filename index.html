@@ -2,35 +2,61 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Full Stack Developer</title>
+    <title>John Doe | Frontend Developer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- 开机LOGO动画（可选，有的话加splash screen） -->
+    <header>
+        <h1>John Doe</h1>
+        <p>Frontend Developer | CS Graduate</p>
+    </header>
 
-    <div class="container">
-        <h1 class="title">FULL-STACK DEVELOPER</h1>
+    <nav>
+        <ul>
+            <li onclick="showSection('about')">About</li>
+            <li onclick="showSection('skills')">Skills</li>
+            <li onclick="showSection('projects')">Projects</li>
+            <li onclick="showSection('contact')">Contact</li>
+        </ul>
+    </nav>
 
-        <div class="main-section">
-            <div class="left-side">
-                <img src="images/your-avatar.png" alt="Pixel Avatar" class="avatar">
-            </div>
-            <div class="right-side">
-                <div class="menu">
-                    <div class="menu-item active" data-section="about"><span class="arrow">▶</span> ABOUT ME</div>
-                    <div class="menu-item" data-section="skills"><span class="arrow">▶</span> SKILLS</div>
-                    <div class="menu-item" data-section="projects"><span class="arrow">▶</span> PROJECTS</div>
-                    <div class="menu-item" data-section="contact"><span class="arrow">▶</span> CONTACT</div>
-                </div>
-            </div>
-        </div>
+    <main id="content">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hello! I'm a recent Computer Science graduate passionate about building beautiful and functional user interfaces. I'm seeking an opportunity to grow as a Frontend Developer and contribute to impactful projects.</p>
+        </section>
 
-        <div class="content" id="content">
-            <p>Hello! I'm a Full Stack Developer passionate about building clean, efficient, and creative web applications. I enjoy working across the stack, from designing pixel-perfect frontends to building robust backends. I love combining technology with imagination to create memorable experiences!</p>
-        </div>
-    </div>
+        <section id="skills" style="display:none;">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML5 / CSS3 / JavaScript</li>
+                <li>React / Next.js / TailwindCSS</li>
+                <li>Responsive Web Design</li>
+                <li>Git / GitHub</li>
+            </ul>
+        </section>
+
+        <section id="projects" style="display:none;">
+            <h2>Projects</h2>
+            <ul>
+                <li><strong>Portfolio Website:</strong> Built a responsive personal website using HTML, CSS, JavaScript.</li>
+                <li><strong>Todo App:</strong> Created a full-featured Todo List with React, supporting add, edit, delete tasks.</li>
+                <li><strong>Weather Dashboard:</strong> Fetched real-time weather data using OpenWeather API and displayed it cleanly.</li>
+            </ul>
+        </section>
+
+        <section id="contact" style="display:none;">
+            <h2>Contact</h2>
+            <p>Email: johndoe@example.com</p>
+            <p>GitHub: <a href="https://github.com/johndoe" target="_blank">github.com/johndoe</a></p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/johndoe" target="_blank">linkedin.com/in/johndoe</a></p>
+        </section>
+    </main>
 
     <script src="script.js"></script>
+</body>
+</html>
+
 </body>
 </html>
