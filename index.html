@@ -2,38 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Frontend Developer | John Doe</title>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Pixel Portfolio | Harper Chen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="retro-theme">
 
-    <!-- 开机LOGO画面 -->
-    <div id="splash-screen">
-        <div class="logo">WELCOME</div>
-    </div>
+<div class="screen">
 
-    <!-- 主界面 -->
-    <div class="screen" id="main-screen" style="display:none;">
-
+    <header>
+        <img src="images/your-avatar.png" alt="Avatar" class="avatar">
         <h1>Harper Chen</h1>
-        <p class="subtitle">Frontend Developer</p>
+        <p class="subtitle">Frontend Adventurer | CS Graduate</p>
+        <button id="theme-toggle">Switch Style</button>
+    </header>
 
-        <div class="menu">
-            <div class="menu-item active" data-section="about"><span class="arrow">▶</span> ABOUT ME</div>
-            <div class="menu-item" data-section="skills"><span class="arrow">▶</span> SKILLS</div>
-            <div class="menu-item" data-section="projects"><span class="arrow">▶</span> PROJECTS</div>
-            <div class="menu-item" data-section="contact"><span class="arrow">▶</span> CONTACT</div>
-        </div>
+    <section class="info-card" id="character-card">
+        <h2>Character Info</h2>
+        <p id="level">Level: 1 (New Grad)</p>
+        <p id="experience">Experience: 0 XP</p>
+    </section>
 
-        <div id="content" class="content">
-            <p>Welcome! Select a section to view.</p>
-        </div>
+    <section class="info-card" id="weapon-card" onclick="toggleWeapons()">
+        <h2>Projects (Click to Expand/Collapse)</h2>
+        <ul id="weapon-list" style="display:none;">
+            <li>Collaborative Web App (Flask, JavaScript, PostgreSQL)</li>
+            <li>Sentiment Analysis with BERT (PyTorch, TensorFlow)</li>
+        </ul>
+    </section>
 
+    <section class="info-card" id="skills-card">
+        <h2>Skills</h2>
+        <ul>
+            <li class="skill-item">Python, C++, SQL</li>
+            <li class="skill-item">Flask, REST APIs, MySQL, PostgreSQL</li>
+            <li class="skill-item">TensorFlow, PyTorch, Pandas, Scikit-learn</li>
+            <li class="skill-item">AWS, Hugging Face Model Hub</li>
+            <li class="skill-item">Accounting, Financial Reporting</li>
+        </ul>
+    </section>
+
+    <section class="info-card">
+        <h2>Quest Log</h2>
+        <ul>
+            <li>Master React and Next.js</li>
+            <li>Contribute to Open Source Projects</li>
+            <li>Land a Frontend Developer Role</li>
+        </ul>
+    </section>
+
+    <div class="buttons">
+        <button onclick="startAdventure()">Start Adventure</button>
+        <button onclick="contactMe()">Send Message</button>
     </div>
 
-    <audio id="beep-sound" src="beep.mp3" preload="auto"></audio>
+</div>
 
-    <script src="script.js"></script>
+<audio id="beep-sound" src="beep.mp3" preload="auto"></audio>
+
+<script src="script.js"></script>
 </body>
 </html>
