@@ -8,7 +8,13 @@
 </head>
 <body>
 
-    <div class="screen">
+    <!-- 开机LOGO画面 -->
+    <div id="splash-screen">
+        <div class="logo">WELCOME</div>
+    </div>
+
+    <!-- 主界面 -->
+    <div class="screen" id="main-screen" style="display:none;">
 
         <h1>John Doe</h1>
         <p class="subtitle">Frontend Developer</p>
@@ -26,7 +32,8 @@
 
     </div>
 
+    <audio id="beep-sound" src="beep.mp3" preload="auto"></audio>
+
     <script src="script.js"></script>
 </body>
 </html>
-
