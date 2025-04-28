@@ -5,15 +5,40 @@ body {
     padding: 0;
     color: black;
     text-align: center;
+    cursor: url('images/pixel-hand.png'), auto;
+}
+
+#splash-screen {
+    background: black;
+    color: white;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    animation: splash 2s forwards;
+}
+
+@keyframes splash {
+    0% { opacity: 1; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0; visibility: hidden; }
 }
 
 .screen {
     background: white;
     border: 8px solid black;
     max-width: 600px;
-    margin: 50px auto;
+    margin: 30px auto;
     padding: 20px;
     box-shadow: 0 0 20px #333;
+    animation: fadein 1s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 h1 {
@@ -61,9 +86,5 @@ h1 {
     padding: 20px;
     font-size: 10px;
     min-height: 150px;
-}
-
-
-a {
-    color: #0077cc;
+    animation: fadein 0.5s;
 }
