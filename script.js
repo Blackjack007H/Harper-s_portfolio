@@ -2,10 +2,13 @@ const menuItems = document.querySelectorAll('.menu-item');
 const content = document.getElementById('content');
 
 const sections = {
-    about: "<h2>About Me</h2><p>Hi! I'm a passionate Full Stack Developer who loves coding and building cool projects!</p>",
-    skills: "<h2>Skills</h2><p>Frontend: HTML, CSS, JavaScript, React<br>Backend: Node.js, Express<br>Database: MongoDB, SQL</p>",
-    projects: "<h2>Projects</h2><p>Portfolio Website, E-commerce App, Chat Application...</p>",
-    contact: "<h2>Contact</h2><p>Email: your@email.com<br>GitHub: github.com/yourprofile</p>"
+    about: `<p>Hello! I'm a Full Stack Developer passionate about building clean, efficient, and creative web applications. I enjoy working across the stack, from designing pixel-perfect frontends to building robust backends. I love combining technology with imagination to create memorable experiences!</p>`,
+    
+    skills: `<p><strong>Frontend:</strong> HTML5, CSS3, JavaScript, React<br><strong>Backend:</strong> Node.js, Express<br><strong>Database:</strong> MongoDB, MySQL<br><strong>Other:</strong> Git, REST APIs, Deployment</p>`,
+    
+    projects: `<p><strong>Pixel Portfolio</strong> - Retro-style portfolio site.<br><strong>ChatSpace</strong> - Real-time messaging app.<br><strong>ShopEase</strong> - Full-stack e-commerce app.</p>`,
+    
+    contact: `<p>Email: your@email.com<br>GitHub: github.com/yourusername<br>LinkedIn: linkedin.com/in/yourusername</p>`
 };
 
 menuItems.forEach(item => {
