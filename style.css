@@ -1,0 +1,61 @@
+body {
+    background: #ccc url('https://www.transparenttextures.com/patterns/dark-mosaic.png') repeat;
+    font-family: 'Press Start 2P', cursive;
+    color: black;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+.screen {
+    background: white;
+    border: 8px solid black;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0px 0px 20px black;
+}
+
+h1 {
+    font-size: 14px;
+}
+
+.avatar {
+    width: 100px;
+    margin: 20px 0;
+}
+
+.menu {
+    margin: 20px 0;
+}
+
+.menu-item {
+    margin: 10px 0;
+    cursor: pointer;
+    position: relative;
+}
+
+.menu-item .arrow {
+    visibility: hidden;
+    margin-right: 10px;
+}
+
+.menu-item.active .arrow {
+    visibility: visible;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.content {
+    border-top: 2px solid black;
+    margin-top: 20px;
+    padding-top: 20px;
+    font-size: 12px;
+    min-height: 100px;
+    transition: all 0.3s ease;
+}
