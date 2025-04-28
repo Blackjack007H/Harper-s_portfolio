@@ -1,67 +1,26 @@
 const beepSound = document.getElementById('beep-sound');
-let experience = 0;
-let level = 1;
+const expFill = document.getElementById('exp-fill');
+let exp = 0;
 
-function typeText(text, elementId) {
-    const element = document.getElementById(elementId);
-    let index = 0;
-    element.innerHTML = '';
-    const interval = setInterval(() => {
-        if (index < text.length) {
-            element.innerHTML += text[index];
-            index++;
-        } else {
-            clearInterval(interval);
-        }
-    }, 30);
-}
-
-function startAdventure() {
+// 打开不同区域
+function showSection(section) {
     beepSound.currentTime = 0;
     beepSound.play();
-    shakeButton(event.target);
-
-    experience += 50;
-    document.getElementById('experience').textContent = `Experience: ${experience} XP`;
-
-    if (experience >= 100 && level == 1) {
-        level++;
-        alert("Level Up! You are now Level 2 (Junior Developer)!");
-        document.getElementById('level').textContent = `Level: 2 (Junior Developer)`;
+    const area = document.getElementById('content-area');
+    if (section === 'backpack') {
+        area.innerHTML = "<h2>Skills Backpack</h2><p>Python, SQL, Flask, TensorFlow...</p>";
+    } else if (section === 'warehouse') {
+        area.innerHTML = "<h2>Warehouse</h2><p>Project Artifacts Stored.</p>";
+    } else if (section === 'skill-tree') {
+        area.innerHTML = "<h2>Skill Tree</h2><ul><li>Frontend Basics</li><li>Backend APIs</li><li>Machine Learning</li></ul>";
+    } else if (section === 'quest-log') {
+        area.innerHTML = "<h2>Quest Log</h2><ul><li>Master Next.js</li><li>Contribute Open Source</li></ul>";
+    } else if (section === 'settings') {
+        area.innerHTML = "<h2>Settings</h2><p>Coming soon...</p>";
     }
 }
 
-function contactMe() {
-    beepSound.currentTime = 0;
-    beepSound.play();
-    shakeButton(event.target);
-    alert("Contact: haipengchan@gmail.com");
-}
-
-function shakeButton(button) {
-    button.style.transform = 'scale(0.9) rotate(2deg)';
-    setTimeout(() => {
-        button.style.transform = 'scale(1) rotate(0)';
-    }, 200);
-}
-
-function toggleWeapons() {
-    beepSound.currentTime = 0;
-    beepSound.play();
-    const list = document.getElementById('weapon-list');
-    if (list.style.display === 'none') {
-        list.style.display = 'block';
-    } else {
-        list.style.display = 'none';
-    }
-}
-
-window.onload = function() {
-    typeText("Level: 1 (New Grad)", "level");
-    typeText("Experience: 0 XP", "experience");
-};
-
-// 切换主题按钮
+// 切换像素风和现代风
 const toggleButton = document.getElementById('theme-toggle');
 toggleButton.addEventListener('click', () => {
     document.body.classList.toggle('retro-theme');
@@ -69,3 +28,16 @@ toggleButton.addEventListener('click', () => {
     beepSound.currentTime = 0;
     beepSound.play();
 });
+
+// 页面载入时，慢慢增加经验值
+window.onload = function() {
+    let expProgress = 0;
+    const interval = setInterval(() => {
+        if (expProgress >= 40) { // 40%经验
+            clearInterval(interval);
+        } else {
+            expProgress += 2;
+            expFill.style.width = expProgress + '%';
+        }
+    }, 100);
+}
