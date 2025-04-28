@@ -1,25 +1,9 @@
-const menuItems = document.querySelectorAll('.menu-item');
-const content = document.getElementById('content');
 const beepSound = document.getElementById('beep-sound');
+let experience = 0;
+let level = 1;
 
-const sections = {
-    about: '',
-    skills: `<h2>Skills</h2><ul><li>HTML5 / CSS3 / JavaScript</li><li>React / Next.js / TailwindCSS</li><li>Responsive Design</li><li>Git / GitHub</li></ul>`,
-    projects: `<h2>Projects</h2><ul><li><strong>Portfolio Website:</strong> A responsive personal website using HTML/CSS/JS.</li><li><strong>Todo List App:</strong> Built with React.</li><li><strong>Weather Dashboard:</strong> Fetches weather data via API.</li></ul>`,
-    contact: `<h2>Contact</h2><p>Email: johndoe@example.com</p><p>GitHub: <a href="https://github.com/johndoe" target="_blank">github.com/johndoe</a></p><p>LinkedIn: <a href="https://linkedin.com/in/johndoe" target="_blank">linkedin.com/in/johndoe</a></p>`
-};
-
-// 开机动画
-window.onload = function() {
-    setTimeout(() => {
-        document.getElementById('splash-screen').style.display = 'none';
-        document.getElementById('main-screen').style.display = 'block';
-        typeText('Hello! I am a Frontend Developer passionate about building interactive web experiences.', document.getElementById('content'));
-    }, 2000);
-};
-
-// 打字机动画
-function typeText(text, element) {
+function typeText(text, elementId) {
+    const element = document.getElementById(elementId);
     let index = 0;
     element.innerHTML = '';
     const interval = setInterval(() => {
@@ -29,22 +13,59 @@ function typeText(text, element) {
         } else {
             clearInterval(interval);
         }
-    }, 50);
+    }, 30);
 }
 
-// 菜单点击切换
-menuItems.forEach(item => {
-    item.addEventListener('click', () => {
-        document.querySelector('.menu-item.active').classList.remove('active');
-        item.classList.add('active');
-        beepSound.currentTime = 0;
-        beepSound.play();
-        const section = item.getAttribute('data-section');
+function startAdventure() {
+    beepSound.currentTime = 0;
+    beepSound.play();
+    shakeButton(event.target);
 
-        if (section === 'about') {
-            typeText('Hello! I am a Frontend Developer passionate about building interactive web experiences.', content);
-        } else {
-            content.innerHTML = sections[section];
-        }
-    });
+    experience += 50;
+    document.getElementById('experience').textContent = `Experience: ${experience} XP`;
+
+    if (experience >= 100 && level == 1) {
+        level++;
+        alert("Level Up! You are now Level 2 (Junior Developer)!");
+        document.getElementById('level').textContent = `Level: 2 (Junior Developer)`;
+    }
+}
+
+function contactMe() {
+    beepSound.currentTime = 0;
+    beepSound.play();
+    shakeButton(event.target);
+    alert("Contact: haipengchan@gmail.com");
+}
+
+function shakeButton(button) {
+    button.style.transform = 'scale(0.9) rotate(2deg)';
+    setTimeout(() => {
+        button.style.transform = 'scale(1) rotate(0)';
+    }, 200);
+}
+
+function toggleWeapons() {
+    beepSound.currentTime = 0;
+    beepSound.play();
+    const list = document.getElementById('weapon-list');
+    if (list.style.display === 'none') {
+        list.style.display = 'block';
+    } else {
+        list.style.display = 'none';
+    }
+}
+
+window.onload = function() {
+    typeText("Level: 1 (New Grad)", "level");
+    typeText("Experience: 0 XP", "experience");
+};
+
+// 切换主题按钮
+const toggleButton = document.getElementById('theme-toggle');
+toggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('retro-theme');
+    document.body.classList.toggle('modern-theme');
+    beepSound.currentTime = 0;
+    beepSound.play();
 });
