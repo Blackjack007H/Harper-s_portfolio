@@ -1,46 +1,68 @@
 body {
-    font-family: Arial, sans-serif;
+    background: #c0c0c0 url('https://www.transparenttextures.com/patterns/pixel-weave.png') repeat;
+    font-family: 'Press Start 2P', cursive;
     margin: 0;
     padding: 0;
-    background-color: #f7f7f7;
-    color: #333;
-}
-
-header {
+    color: black;
     text-align: center;
-    padding: 40px 20px;
 }
 
-nav ul {
-    list-style: none;
+.screen {
+    background: white;
+    border: 8px solid black;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    box-shadow: 0 0 20px #333;
+}
+
+h1 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 10px;
+    margin-bottom: 20px;
+}
+
+.menu {
     display: flex;
-    justify-content: center;
-    background-color: #333;
-    margin: 0;
-    padding: 0;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-nav li {
-    padding: 15px 20px;
-    color: white;
+.menu-item {
+    margin: 10px 0;
     cursor: pointer;
+    font-size: 12px;
+    position: relative;
 }
 
-nav li:hover {
-    background-color: #555;
+.menu-item .arrow {
+    visibility: hidden;
+    margin-right: 8px;
 }
 
-main {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 0 20px;
+.menu-item.active .arrow {
+    visibility: visible;
+    animation: blink 1s infinite;
 }
 
-h2 {
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 10px;
-    margin-top: 30px;
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
+
+.content {
+    background: #f0f0f0;
+    border: 2px solid black;
+    padding: 20px;
+    font-size: 10px;
+    min-height: 150px;
+}
+
 
 a {
     color: #0077cc;
